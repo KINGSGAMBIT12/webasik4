@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+
+<body>
+    <h1>User List - Admin Dashboard</h1>
+    <ul id="userList"></ul>
+
+    <script>
+        async function fetchUsers() {
+            try {
+                const response = await fetch('http://localhost:3000/api/users');
+                const users = await response.json();
+
+                const userListElement = document.getElementById('userList');
+                userListElement.innerHTML = '';
+
+                users.forEach(user => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `Username: ${user.username}, Name: ${user.name}, Email: ${user.email}`;
+                    userListElement.appendChild(listItem);
+                });
+            } catch (error) {
+                console.error('Error fetching users:', error);
+            }
+        }
+
+        // Fetch users when the page loads
+        window.onload = fetchUsers;
+    </script>
+</body>
+
+</html>

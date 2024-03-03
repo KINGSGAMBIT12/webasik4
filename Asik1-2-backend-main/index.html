@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BonjourTours</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <img src="images/travellogo.jpeg" alt="" width="170px">
+        <nav class="navbar">
+            <ul>
+                <li><button class="services-btn" onclick="redirectToServices()">Services</button></li>
+                <li id="userDisplay" style="display: none;"></li>
+                <li id="loginBtn"><button class="login-btn" onclick="redirectToLogin(event)">Login</button></li>
+                <li id="signupBtn"><button class="signup-btn" onclick="redirectToSignup()">Sign up</button></li>
+                <li id="logoutBtn" style="display: none;"><button class="logout-btn" onclick="logout()">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero">
+        <div class="left-container">
+            <div class="left-content">
+                <h4> Best Destination around the world </h4>
+                <h1>Travel, enjoy and live a new and full life</h1>
+                <p>
+                    Embark on a journey with us and unlock a world of possibilities! <br> 
+                    At BonjourTours, we believe in the power of travel to enrich your life. <br> 
+                    Travel, enjoy, and live a new and full life with our curated experiences. <br> 
+                    Whether you crave breathtaking landscapes, cultural immersion, or simply <br> 
+                    moments of pure relaxation, we've got you covered. 
+                </p>
+                <button class="contact-btn"> Contact</button>
+            </div>
+        </div>
+        <div class="right-container">
+            <img src="images/tourisbag.jpeg" alt="" width="580 px">
+        </div>
+    </section>
+
+    <!-- Services section -->
+    <section id="service-section" class="title-style">
+        <div class="category-title">
+            <h5>CATEGORY</h5>
+            <h3>We offer best services</h3>
+        </div>
+        <div class="services-card">
+            <div class="card">
+                <img src="images/icon1.png" alt="" width="75">
+                <h4>Calculated Weather</h4>
+                <p>Built Wicket longer admire do barton vanity itself do in it.</p>
+<div class="card-buttons">
+    <input type="text" id="cityInput" placeholder="Enter city name" style="margin-top: 10px;">
+    <button onclick="getWeather()" style="margin-top: 10px;">Get Weather</button>
+    <div id="weatherResult" style="margin-top: 10px;"></div>
+</div>
+
+            </div>            
+            <div class="card">
+                <img src="images/icon2.png" alt="" width="75">
+                <h4>Best Flights</h4>
+                <p>Built Wicket longer admire do barton vanity itself do in it.</p>
+                <div class="card-buttons">
+                    <input type="text" id="flightDestinationInput" placeholder="Enter Destination City">
+                    <button onclick="viewFlightDetails()">View Details</button>
+                </div>
+            </div>            
+            <div class="card">
+                <img src="images/icon3.jpeg" alt="" width="75">
+                <h4>Tours</h4>
+                <p>Built Wicket longer admire do barton vanity itself do in it.</p>
+                <div class="card-buttons">
+                    <button onclick="viewWeatherDetails()">View Details</button>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+
+    <!-- Top services section -->
+    <section class="title-style" style="margin-bottom: 50px;">
+        <div class="category-title">
+            <h5>Top Selling</h5>
+            <h3>We offer best services</h3>
+        </div>
+        <div class="services-card">
+            <div class="destination-card">
+                <img src="images/desti1.jpeg" alt="" width="75">
+                <h4>London, UK <span>1000000 Tenge </span></h4>
+                <p>Lorem ipsum dolor sit amet consecteur adipsicing elit.</p>
+            </div>
+            <div class="destination-card">
+                <img src="images/dest2.jpeg" alt="" width="75">
+                <h4>Astana, Kazakhstan<span> 1000000 Tenge </span></h4>
+                <p>Lorem ipsum dolor sit amet consecteur adipsicing elit.</p>
+            </div>
+            <div class="destination-card">
+                <img src="images/dest3.jpeg" alt="" width="75">
+                <h4>New-York, USA<span> 1000000 Tenge </span></h4>
+                <p>Lorem ipsum dolor sit amet consecteur adipsicing elit.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking section -->
+    <section class="title-style" style="margin-bottom: 50px;">
+        <div class="left-container-booking">
+            <div class="left-content-booking">
+                <h5>Easy and Fast</h5>
+                <h3>Book Your next trip in 3 easy steps </h3>
+                <div class="booking-input">
+                    <label for="destination">Destination:</label>
+                    <input type="text" id="destinationInput" placeholder="Enter destination">
+                </div>
+                <div class="booking-input">
+                    <label for="date">Travel Date:</label>
+                    <input type="date" id="dateInput">
+                </div>
+                <div class="booking-input">
+                    <label for="adults">Number of Adults:</label>
+                    <input type="number" id="adultsInput" min="0" value="1">
+                </div>
+                <div class="booking-input">
+                    <label for="children">Number of Children:</label>
+                    <input type="number" id="childrenInput" min="0" value="1">
+                </div>
+                <div class="booking-input">
+                    <label for="idToUpdate">Travel ID to Update:</label>
+                    <input type="text" id="idToUpdateInput" placeholder="Enter ID">
+                </div>
+                <div class="booking-input">
+                    <label for="newDate">New Travel Date:</label>
+                    <input type="date" id="newDateInput">
+                </div>
+                <button class="booking-btn" onclick="bookTrip()"> Booking</button>
+                <button class="update-date-btn" onclick="updateTravelDate()">Update Travel Date</button>
+                <button class="makepay-btn" onclick="redirectToPaymentForm()">Make Payment</button>
+            </div>
+        </div>
+        <div class="right-container-booking">
+            <div class="booking-card">
+                <img src="images/tripgreece.jpeg" class="booking-img" alt="">
+                <h5>Trip to Greece</h5>
+                <p>14-29 June | by Ali tech</p>
+                <div class="social-icon">
+                    <span class="icon-item"><img src="images/leaf.png" alt=""> </span>
+                    <span class="icon-item"><img src="images/map.png" alt=""> </span>
+                    <span class="icon-item"><img src="images/send.png" alt=""> </span>
+                </div>
+                <div class="booking-card-footer">
+                    <div class="left-booking-card-footer">
+                        <img src="images/building.jpeg" alt="" width="18">
+                        <span> 24 people going</span>
+                    </div>
+                    <div>
+                        <img src="images/heart.png" alt="" width="20">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="index.js" defer></script>
+</body>
+
+</html>
